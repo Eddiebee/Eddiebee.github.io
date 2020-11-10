@@ -1,2 +1,2 @@
-# Eddiebee.github.io
- Hosting this LIVE!!
+# eddiebee.github.io
+ Hosting this LIVE!
