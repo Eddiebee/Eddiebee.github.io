@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Rokkitt&family=Source+Sans+Pro:wght@200;400&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+body{
+    text-wrap: normal;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+/*global spans*/
+.coin{
+    color: #FFD700;
+}
+
+.landing-page{
+    height: 100vh;
+    width: 100vw;
+    background: url("image/landing-background.jpg") center no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+}
+
+.landing-page::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background-color: rgba(255, 240, 153, 0.05);
+    z-index: -1;
+}
+
+.lil-nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: rgba(25, 26, 26, .79);
+    box-shadow: 2px 2px 100px 2px #FFD700;
+}
+
+.logo{
+    border: 1px solid #FFD700;
+    height: 3.5rem;
+    margin-left: 2rem;
+    z-index: 1;
+}
+
+.logo h1{
+    font-size: 1.4rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    padding: 7px;
+    color: #c3c5c6;
+}
+
+.logo h1:hover{
+    color: #e7e8e9;
+    transition: color .4s ease-in;
+}
+
+.menu-toggle{
+    font-size: 3rem;
+    color: #e7e8e9;
+    margin-right: 2rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1500;
+}
+
+.menu-toggle:hover{
+    color: #FFD700;
+    transition: color 1s ease-in-out;
+}
+
+.menu-toggle .fa-times{
+    display: none;
+}
+
+.nav-list{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(1,1,1,.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1400;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s;
+}
+
+.menu-open .cnt,
+.menu-open .sign-in{
+    display: none;
+}
+
+.menu-open .menu-toggle .fa-times{
+    display: block;
+}
+
+.menu-open .menu-toggle .fa-list-ul{
+    display: none;
+}
+
+.menu-open .nav-list{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-item:not(:last-child){
+    margin-bottom: 1rem;
+}
+.nav-link{
+    display: block;
+    color: #FFD700;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 1rem;
+    margin: 1rem;
+    border-bottom: 2px solid #c3c5c6;
+}
+
+.nav-link:hover{
+    color: #c3c5c6;
+    border-bottom-color: #FFD700;
+    transition: color .8s ease-out;
+}
+
+/*.welcome-msg-cnt{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    margin-top: 10rem;*/
+/*}*/
+
+.welcome-msg{
+    font-size: 1.5rem;
+    color: #e7e8e9;
+    text-transform: uppercase;
+
+}
+
+.cnt{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.trade-display{
+    width: 35rem;
+    height: auto;
+    background-color: #212120;
+    margin: 15rem 1.3rem 0;
+    cursor: pointer;
+    border-radius: 10px;
+    opacity: .9;
+}
+
+.crypto-currency-btc,
+.crypto-currency-ether{
+    /*display: flex;*/
+    margin: 2rem 2rem;
+    border-bottom: 3px solid #000;
+}
+
+.crypto-currency-btc h5,
+.crypto-currency-ether h5{
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #e7e8e9;
+    letter-spacing: 2px;
+    margin-right: -2px;
+}
+
+.fa-bitcoin,
+.fa-money{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.first-letter{
+    font-size: 2.7rem;
+}
+
+.bitcoin-abt,
+.ethereum-abt{
+    display: none;
+    width: 30rem;
+    height: auto;
+    font-size: 1.5rem;
+    font-family: 'Rokkitt', sans-serif;
+    /*letter-spacing: 0.009rem;
+    margin-right: -0.009rem;*/
+    padding: 0 10px 10px 10px;
+    text-align: justify;
+    color: #fbffed;
+}
+
+/*.bitcoin-abt:hover,
+.ethereum-abt:hover{
+    transition: display 2s ease-in;
+} */
+
+.displayBtc .bitcoin-abt{
+    display: block;
+}
+
+.displayBtc .ethereum-abt{
+    display: none;
+}
+
+.displayEther .ethereum-abt{
+    display: block;
+}
+
+.displayEther .bitcoin-abt{
+    display: none;
+}
+
+/* Learn and trade btn*/
+.sign-in{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    justify-content: center;
+}
+
+.sign-in-btn{
+    width: 100%;
+    height: 3.8rem;
+    background-color: #FFD700;
+    /*position: fixed;*/
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.sign-in-link{
+    font-size: 1.5rem;
+    font-family:'Rokkitt', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    color: #212120;
+    z-index: 4;
+}
+
+.sign-in-btn:hover,
+.sign-in-btn:visited{
+    color: #e7e8e9;
+    background-color: rgba(190,188,158,0.99);
+    transition: background-color 1s ease-out;
+}
+
+/*.sign-in-btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    background-color: #fbffed;
+    border: #212120;
+    outline: none;
+} */
+
+/*I need media queries for an iPad, iPad Pro, Galaxy Fold, iPhone 5/SE */
+
+/* Media Queries */
+
+/*iPhone SE and the likes*/
+@media screen and (width: 320px) {
+    .trade-display{
+        width: 29rem;
+        margin: 11rem 0 0 1rem;
+    }
+
+    .bitcoin-abt,
+    .ethereum-abt{
+        width: 25rem;
+    }
+
+    .container .pop-up-container{
+        width: 30rem;
+        height: 10rem;
+        top: 5rem;
+    }
+
+    .profiles{
+        display: flex;
+        align-items: center;
+    }
+
+    .container .icon-links{
+        justify-content: center;
+        margin: -.2rem;
+    }
+
+}
+
+/*moto G4 and the likes*/
+@media screen and (width: 360px) {
+    .trade-display{
+        width: 30rem;
+    }
+    .bitcoin-abt,
+    .ethereum-abt{
+        width: 25rem;
+    }
+}
+
+/*Galaxy fold and the likes*/
+@media screen and (width: 280px) {
+    .trade-display{
+        margin-top: 12rem;
+        width: 23rem;
+    }
+    .bitcoin-abt,
+    .ethereum-abt{
+        width: 20rem;
+        font-size: 1.6rem;
+        letter-spacing: 0;
+        margin: 0;
+    }
+
+    .container .pop-up-container{
+        width: 25rem;
+        height: 10rem;
+    }
+
+    .profiles{
+        display: flex;
+        align-items: center;
+    }
+}
+
+/*for wider screens such as iPad, iPad Air and the likes*/
+@media screen and (min-width: 500px){
+    .cnt{
+        /*width: 100%;*/
+        position: relative;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* media query specifically for ipad pro and the likes*/
+@media screen and (min-height: 1000px ){
+    .nav-link{
+        margin: 3rem 0;
+    }
+
+    .nav-link{
+        font-size: 3.5rem;
+    }
+
+    .logo{
+        height: 6.4rem;
+    }
+
+    .logo h1{
+        font-size: 3.3rem;
+    }
+
+    .menu-toggle{
+        font-size: 6.7rem;
+        margin-left: 3rem;
+    }
+    .trade-display{
+        width: 60rem;
+        height: inherit;
+        margin: 36% 0 auto;
+    }
+
+    .fa-bitcoin,
+    .fa-money{
+        font-size: 3.9rem;
+    }
+
+    .first-letter{
+        font-size: 6rem;
+    }
+
+    .crypto-currency-btc,
+    .crypto-currency-ether{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .crypto-currency-btc h5,
+    .crypto-currency-ether h5{
+        font-size: 4rem;
+    }
+
+    .bitcoin-abt,
+    .ethereum-abt{
+        width: 45rem;
+        font-size: 2.8rem;
+        padding: 2rem;
+    }
+
+    .sign-in{
+        margin: 4.7rem 0 auto;
+    }
+
+    .sign-in-btn{
+        height: 5rem;
+    }
+
+    .sign-in-link{
+        font-size: 2.5rem;
+        padding: 15px;
+    }
+
+    .container{
+        position: absolute;
+        top: 7rem;
+    }
+
+    .container .profiles{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /*margin: 1rem 0 0 0;*/
+    }
+
+    .container .pop-up-container{
+        width: 50rem;
+        height: 15.8rem;
+        top: 4rem;
+    }
+
+    .container .profile-img{
+        width: 10rem;
+        height: 9rem;
+    }
+
+    .container .in-touch > h2{
+        font-size: 2.5rem;
+    }
+
+    .container .icon-links{
+        margin: -2rem;
+        justify-content: center;
+    }
+
+    .container .instagram,
+    .container .twitter,
+    .container .whatsapp,
+    .container .phone{
+        padding: 0 .8rem;
+    }
+
+    .container .social-media,
+    .container .tel{
+        font-size: 4rem;
+    }
+}
+
+/* pop-up box styles */
+.pop-up-container{
+    display: none;
+    position: absolute;
+    width: 34.3rem;
+    height: 12rem;
+    top: 5.5rem;
+    background-color: rgba(206,206,202,0.85);
+    margin: 1rem 0 1rem 1rem;
+    border-radius: 15px;
+    box-shadow: 3px 5px 10px 2px #e7e8e9;
+}
+
+.displayPopUp .pop-up-container{
+    display: block;
+}
+
+.img{
+    position: relative;
+    width: 6rem;
+}
+
+.profile-img{
+    background-color: #e7e8e9;
+    width: 5.4rem;
+    height: 4.4rem;
+    margin: .7rem;
+    border: 2px solid #212120;
+    border-radius: 50%;
+}
+
+.in-touch{
+    margin: 0 .7rem;
+}
+
+.in-touch > h2{
+    text-transform: uppercase;
+    color: #212120;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.bee{
+    color: gold;
+}
+
+.icon-links{
+    display: flex;
+    justify-content: left;
+    margin: .9rem 0;
+}
+
+.instagram, .twitter, .whatsapp, .phone{
+    margin: 0 1.6rem;
+}
+
+.link{
+    color: inherit;
+    transition: color 1s ease-out;
+}
+
+.link:hover{
+    color: #FFD700;
+}
+
+.social-media, .tel{
+    font-size: 2.4rem;
+}
+
+/* animations with @keyframes*/
+
+@keyframes animate-left {
+    from {
+        top: 0rem;
+    }
+
+    to {
+        top: 1.3rem;
+    }
+}
+
+@keyframes color-mix {
+    from {
+        color: #FFD700;
+    }
+
+    to {
+        color: #212120;
+    }
+
+
+}
+
+.animate-left{
+    animation: animate-left 2s ease 1s infinite alternate;
+}
+
+.color-mix{
+    animation: color-mix 2s ease-in-out 3s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
